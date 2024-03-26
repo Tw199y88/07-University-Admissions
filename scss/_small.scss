@@ -1,0 +1,101 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  height: 100%;
+}
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-family: $defaultFont;
+  font-weight: $normalWeight;
+  color: $fontColor;
+}
+
+#headerWrapper {
+background: rgb(126,217,87);
+background: linear-gradient(60deg, rgba(0,151,178,1) 0%, rgba(126,217,87,1) 81%);
+  color: $secondaryColor;
+}
+header {
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem $gutter;
+  gap: 8px;
+  h1 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: $normalWeight;
+  }
+}
+
+/*Navigation stuff goes here*/
+
+#navWrapper {
+  background-color: $menuColor;
+}
+
+nav {
+
+  button{
+    padding: .5rem;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: rgba(255,255,255, 0.9);
+  }
+
+
+  ul {
+    display:none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-top: solid 1px rgba(255,255,255, 0.3);
+    li {
+      border-bottom: solid 1px rgba(255,255,255, 0.3);
+
+      a {
+        display: block;
+        padding: 0.75rem;
+        color: white;
+        text-align: center;
+        text-decoration: none;
+        &:hover {
+          background-color: darken($menuColor, 4%);
+          color: orange;
+        }
+      }
+    }
+    li.active a {
+        background-color: darken($menuColor, 8%);
+    }
+  }
+  ul.open {
+    display: block;
+  }
+}
+
+
+// begin the footer
+
+#footerWrapper {
+    background: rgb(126,217,87);
+background: linear-gradient(60deg, rgba(0,151,178,1) 0%, rgba(126,217,87,1) 81%);
+}
+footer {
+    padding: 0.5rem $gutter;
+    p{
+        margin: 0;
+        font-weight: $lightWeight;
+        text-align: center;
+    }
+}
