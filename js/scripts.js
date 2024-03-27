@@ -5,9 +5,9 @@ document.querySelector('#year').textContent = variableOne.getFullYear();
 
 //new stuff here
 
-function toggleMenu(){
-    document.getElementById("primaryNav").classList.toggle("open");
-}
+// function toggleMenu(){
+//     document.getElementById("primaryNav").classList.toggle("open");
+// }
 
 const x = document.getElementById("hamburgerButton")
 

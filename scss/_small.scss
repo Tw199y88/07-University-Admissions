@@ -14,6 +14,7 @@ html {
 }
 
 body {
+  display:grid;
   height: 100%;
   font-family: $defaultFont;
   font-weight: $normalWeight;
@@ -21,29 +22,57 @@ body {
 }
 
 #headerWrapper {
-background: rgb(126,217,87);
-background: linear-gradient(60deg, rgba(0,151,178,1) 0%, rgba(126,217,87,1) 81%);
+  grid-row-start: 1;
+  background: rgb(41,51,82);
+  background: linear-gradient(180deg, rgba(41,51,82,0.9220063025210083) 0%, rgba(41,51,82,1) 100%);
   color: $secondaryColor;
 }
+
+
 header {
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem $gutter;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: 75px auto 44px;
+  align-items: center;
+  padding: .5rem 2vw;
+
+  div#phone{
+    display: none;
+  }
+
+  
   h1 {
     margin: 0;
-    font-size: 1.2rem;
-    font-weight: $normalWeight;
+    font-family: "Libre Baskerville", serif;
+    font-weight: 400;
+    font-style: normal;
+    color:#ffffff;
+    text-align: center;
   }
 }
 
 /*Navigation stuff goes here*/
 
 #navWrapper {
+  grid-row-start: 4;
   background-color: $menuColor;
 }
 
+div#hamburger a, div#closex a{
+display: block;
+padding: .8rem 2vw;
+font-size: 1.5rem;
+color: white;
+text-decoration: none;
+text-align: right;
+} //end of nav buttons
+
+div#closex a{
+  margin-right: 2vw;
+}
+
 nav {
+
+height: 100vh;
 
   button{
     padding: .5rem;
@@ -55,7 +84,6 @@ nav {
 
 
   ul {
-    display:none;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -66,12 +94,12 @@ nav {
       a {
         display: block;
         padding: 0.75rem;
-        color: white;
-        text-align: center;
+        color: rgb(255, 255, 255);
+        text-align: right;
         text-decoration: none;
         &:hover {
           background-color: darken($menuColor, 4%);
-          color: orange;
+          color: rgb(255, 255, 255);
         }
       }
     }
@@ -82,15 +110,93 @@ nav {
   ul.open {
     display: block;
   }
+} //end nav
+
+/*Main*/
+
+div#mainWrapper{
+  grid-row-start: 2;
 }
+
+form.my-form{
+margin: 1rem $gutter;
+
+label{
+  display: block;
+  font-size: .8rem;
+  color: #1e1e1e;
+  padding-top: .2rem;
+}
+
+h3{
+  font-size: .9rem;
+  color:#A51C30;
+  margin: 1.5rem 0 .2rem 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+input[type=text],
+input[type=tel],
+input[type=number],
+input[type=email],
+input[type=password],
+select{
+  display: block;
+  margin: .1rem 0 1rem 0;
+  border: 1px solid #999;
+  border-radius: 10px 10px 5 5;
+  border-bottom-width:5px;
+  border-bottom-color:#555;
+  font-size: 1rem;
+  color: black;
+  width:250px;
+  padding: .5rem $gutter;
+}
+
+
+input:required{
+  border-bottom-color: rgb(255, 0, 0);
+  input:focus{
+    border-bottom-color:rgb(23, 182, 57);
+  }
+}
+
+input[type=submit]{
+border: none;
+background-color: #A51C30;
+color: white;
+border-radius: 1rem;
+padding: .75rem 1.5rem;
+margin: 2rem 0;
+width: 250px;
+font-size: 1.2rem;
+-webkit-appearance: none;
+appearance: none;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+
+
+} // end of styling
+
+
+
+
+
+
+
+
 
 
 // begin the footer
 
 #footerWrapper {
-    background: rgb(126,217,87);
-background: linear-gradient(60deg, rgba(0,151,178,1) 0%, rgba(126,217,87,1) 81%);
+  grid-row-start: 3;
+background: #A51C30;
+color: white;
+font-weight: 700;
 }
+
 footer {
     padding: 0.5rem $gutter;
     p{

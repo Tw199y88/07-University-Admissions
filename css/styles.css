@@ -326,35 +326,60 @@ html {
 }
 
 body {
+  display: grid;
   height: 100%;
   font-family: "Poppins", sans-serif;
   font-weight: 500;
-  color: #333;
+  color: #000000;
 }
 
 #headerWrapper {
-  background: rgb(126, 217, 87);
-  background: linear-gradient(60deg, rgb(0, 151, 178) 0%, rgb(126, 217, 87) 81%);
+  grid-row-start: 1;
+  background: rgb(41, 51, 82);
+  background: linear-gradient(180deg, rgba(41, 51, 82, 0.9220063025) 0%, rgb(41, 51, 82) 100%);
   color: rgb(0, 183, 255);
 }
 
 header {
-  display: flex;
-  align-items: flex-end;
-  padding: 1rem 16px;
-  gap: 8px;
+  display: grid;
+  grid-template-columns: 75px auto 44px;
+  align-items: center;
+  padding: 0.5rem 2vw;
+}
+header div#phone {
+  display: none;
 }
 header h1 {
   margin: 0;
-  font-size: 1.2rem;
-  font-weight: 500;
+  font-family: "Libre Baskerville", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ffffff;
+  text-align: center;
 }
 
 /*Navigation stuff goes here*/
 #navWrapper {
-  background-color: rgb(0, 183, 255);
+  grid-row-start: 4;
+  background-color: #A51C30;
 }
 
+div#hamburger a, div#closex a {
+  display: block;
+  padding: 0.8rem 2vw;
+  font-size: 1.5rem;
+  color: white;
+  text-decoration: none;
+  text-align: right;
+}
+
+div#closex a {
+  margin-right: 2vw;
+}
+
+nav {
+  height: 100vh;
+}
 nav button {
   padding: 0.5rem;
   background: transparent;
@@ -363,7 +388,6 @@ nav button {
   color: rgba(255, 255, 255, 0.9);
 }
 nav ul {
-  display: none;
   list-style-type: none;
   padding: 0;
   margin: 0;
@@ -375,24 +399,84 @@ nav ul li {
 nav ul li a {
   display: block;
   padding: 0.75rem;
-  color: white;
-  text-align: center;
+  color: rgb(255, 255, 255);
+  text-align: right;
   text-decoration: none;
 }
 nav ul li a:hover {
-  background-color: #00a8eb;
-  color: orange;
+  background-color: #94192b;
+  color: rgb(255, 255, 255);
 }
 nav ul li.active a {
-  background-color: #009ad6;
+  background-color: #821626;
 }
 nav ul.open {
   display: block;
 }
 
+/*Main*/
+div#mainWrapper {
+  grid-row-start: 2;
+}
+
+form.my-form {
+  margin: 1rem 16px;
+}
+form.my-form label {
+  display: block;
+  font-size: 0.8rem;
+  color: #1e1e1e;
+  padding-top: 0.2rem;
+}
+form.my-form h3 {
+  font-size: 0.9rem;
+  color: #A51C30;
+  margin: 1.5rem 0 0.2rem 0;
+  border-bottom: 1px solid #eeeeee;
+}
+form.my-form input[type=text],
+form.my-form input[type=tel],
+form.my-form input[type=number],
+form.my-form input[type=email],
+form.my-form input[type=password],
+form.my-form select {
+  display: block;
+  margin: 0.1rem 0 1rem 0;
+  border: 1px solid #999;
+  border-radius: 10px 10px 5 5;
+  border-bottom-width: 5px;
+  border-bottom-color: #555;
+  font-size: 1rem;
+  color: black;
+  width: 250px;
+  padding: 0.5rem 16px;
+}
+form.my-form input:required {
+  border-bottom-color: rgb(255, 0, 0);
+}
+form.my-form input:required input:focus {
+  border-bottom-color: rgb(23, 182, 57);
+}
+form.my-form input[type=submit] {
+  border: none;
+  background-color: #A51C30;
+  color: white;
+  border-radius: 1rem;
+  padding: 0.75rem 1.5rem;
+  margin: 2rem 0;
+  width: 250px;
+  font-size: 1.2rem;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+       appearance: none;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 #footerWrapper {
-  background: rgb(126, 217, 87);
-  background: linear-gradient(60deg, rgb(0, 151, 178) 0%, rgb(126, 217, 87) 81%);
+  grid-row-start: 3;
+  background: #A51C30;
+  color: white;
+  font-weight: 700;
 }
 
 footer {
@@ -405,11 +489,54 @@ footer p {
 }
 
 @media only screen and (min-width: 35rem) {
+  /* Header*/
   header {
+    grid-template-columns: 75px auto auto;
     padding: 2rem 16px;
   }
   header h1 {
     font-size: 2rem;
+  }
+  header div#phone {
+    display: block;
+    justify-self: end;
+  }
+  header div#phone a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.5rem;
+  }
+  header div#phone a:hover {
+    color: rgb(253, 243, 136);
+  }
+  /* NAVIGATION STUFF GOES HERE */
+  div#hamburger, div#closex {
+    display: none;
+  }
+  nav {
+    height: auto;
+  }
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+  }
+  nav ul li {
+    border: none;
+  }
+  /* STRUCTURE STUFF GOES HERE */
+  div#headerWrapper {
+    grid-row-start: 1;
+  }
+  div#navWrapper {
+    grid-row-start: 2;
+  }
+  div#mainWrapper {
+    grid-row-start: 3;
+  }
+  div#footerWrapper {
+    grid-row-start: 4;
   }
 }
 @media only screen and (min-width: 60rem) {
@@ -424,9 +551,15 @@ footer p {
   Nav ul, Nav ul.open {
     margin-left: 2vw;
     display: flex;
+    justify-content: right;
     border: none;
   }
   Nav ul li, Nav ul.open li {
     border: none;
+  }
+  Nav ul li a, Nav ul.open li a {
+    padding: 0.2rem 1rem;
+    border-radius: 10px;
+    margin: 0.5rem 0;
   }
 }

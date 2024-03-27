@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Start File | The Front End Developer</title>
+    <title>Start File | University Admissions</title>
     <meta name="description" content="Brooke Anderson's Sample Start File with SCSS">
     <meta name="author" content="Brooke Anderson">
 
@@ -13,6 +13,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
 
 
     <link href="css/styles.min.css" rel="stylesheet">
@@ -30,26 +33,88 @@
     
 <div id="headerWrapper">
     <header>
-        <img src="images/header-logo.png" alt="header-logo" width="40" height="40">
-        <h1>The Front End Developer</h1>
+        <img src="images/header-logo.png" alt="header-logo" width="85" height="85">
+        <h1>University Admissions</h1>
+        <div id="hamburger"><a href="#closex">&#9776;</a></div>
+        <div id="phone"><a href="tel:18005551234"> 1800-555-1234</a></div>
     </header>
 </div>
 
 <div id="navWrapper">
     <nav >
-        <button id="hamburgerButton">&#9776;</button>
+        <div id="closex"><a href="#hamburger">x</a></div>
+        <!-- <button id="hamburgerButton">&#9776;</button> -->
         <ul id="primaryNav">
-            <li class="active"><a href="#">Learn</a></li>
-            <li><a href="#">Practice</a></li>
-            <li><a href="#">Implement</a></li>
+            <li class="active"><a href="#">Apply</a></li>
+            <li><a href="#">Students</a></li>
+            <li><a href="#">Academics</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Tuition</a></li>
         </ul>
 </nav>
 </div>
 
 <div id="mainWrapper">
-    <main>
-<h1>Learn</h1>
-    </main>
+ <main>
+  <h1>Admission Form</h1>
+
+  <form method="GET" action="thanks.html" class="my-form" autocomplete="on">
+<h3>Personal Information</h3>
+
+
+   <label>First Name: <input type="text" name="fname" autocomplete="given-name" required title="First Name Here"> </label>
+   <label>Last Name: <input type="text" name="lname" autocomplete="family-name" required title="Last Name Here"> </label>
+   <label>Email: <input type="email" name="email" autocomplete="email" required title="Your Email Here"> </label>
+   <label>Cell Phone: <input type="tel" name="phone" autocomplete="tel" required title="Cell Phone Here"> </label>
+
+   <h3>Location/Address</h3>
+
+   <label>Address: <input type="text" name="address" autocomplete="street-address" optional title="First Name Here"> </label>
+   <label>City: <input type="text" name="city" autocomplete="address-level2" optional title="First Name Here"> </label>
+   <label>State: <input type="text" name="state" autocomplete="address-level1" optional title="First Name Here"> </label>
+   <label>Zip Code: <input type="text" name="zip" autocomplete="postal-code" optional title="First Name Here"> </label>
+
+
+   <h3>Communication Preferences</h3>
+   <label><input type="radio" name ="communication" value="email">Email</label>
+   <label><input type="radio" name ="communication" value="phonecall">Phone call</label>
+   <label><input type="radio" name ="communication" value="text">Text</label>
+
+
+   <h3>Your Previous School</h3>
+    <label>
+        <select name="condition">
+            <option value="No Selection Made">Please Select</option>
+            <option value="Provohs">Provo High School</option>
+            <option value="Draperhs">Draper High School</option>
+            <option value="sandhs">San diego High School</option>
+            <option value="fullertonhs">Fullerton High School</option>
+            <option value="cedarhs">Cedar High School</option>
+            <option value="eastvalhs">East Valley High School</option>
+            <option value="moabhs">Moab High School</option>
+            <option value="Diamondbhs">Diamond Bar High School</option>
+            <option value="sandyhs">Sandy High School</option>
+        </select>
+    </label>
+    <label>Graduation Date: <input type="tel" name="phone" autocomplete="tel" required title="Cell Phone Here"> </label>
+
+    <h3>Education Completed</h3>
+    <label><input type="checkbox" name ="High School complete">High school diploma</label>
+    <label><input type="checkbox" name ="Some high school complete">Some High School</label>
+    <label><input type="checkbox" name ="Some college complete">Some college</label>
+
+    <label>UserName (6 or more)<input type="text" required minlength="6" title="Please enter a UserName that is at least 6 characters long"></label>
+
+<label> Password (5-10 letters or numbers)<input type="password" name="password" required pattern="[A-Za-z0-9]{5,10}" title="5-9 letters or numbers"></label>
+
+
+
+
+
+
+   <input type="submit" value="Apply To This School">
+ </form>
+ </main>
 </div>
 
 <div id="footerWrapper">

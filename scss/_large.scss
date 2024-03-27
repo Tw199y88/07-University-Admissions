@@ -10,9 +10,15 @@ button{display:none;}
 ul, ul.open{
     margin-left: 2vw;
     display:flex;
+    justify-content: right;
     border: none;
     li{
         border:none;
+        a{
+            padding: .2rem 1rem;
+            border-radius: 10px;
+            margin: .5rem 0;
+        }
     }
 
 } //end ul
